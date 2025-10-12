@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #cbcbca;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #FB9400;
+}
+
+@layer base {
+
+    html,
+    body,
+    main {
+        font-family: "Inter", sans-serif;
+    }
+    .font-inter {
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+    }
+    .font-sans {
+        font-family: "Work Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+    }
+
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    select {
+        /* -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none; */
+    }
+
+    
+
+    input[type="checkbox"]:checked {
+        accent-color: #FB9400;
+    }
+    a:hover{
+        text-decoration: none;
+    }
+    /* ... */
+}
+
+@layer utilities {
+    
+    .modal-container {
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.40);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999 !important;
+    }
+    .small-container {
+        width: 100%;
+        max-width: 550px;
+        margin: 0 auto;
+        padding: 0 15px;
+
+        @media (min-width: theme('screens.sm')) {
+            padding: 0 0px;
+        }
+    }
+
+    .wrapper {
+        width: 100%;
+        max-width: 1920px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 270px calc(100% - 270px);
+    }
+
+    .layout-container {
+        width: 100%;
+        margin: 0 auto;
+        max-width: 1240px;
+
+        @media (min-width: theme('screens.xxl')) {
+            max-width: 1400px;
+        }
+
+        @media (min-width: theme('screens.3xl')) {
+            max-width: 1700px;
+        }
+    }
+
+    .community-container {
+        width: 100%;
+        margin: 0 auto;
+        max-width: 712px;
+    }
+
+    .earning-table {
+        display: grid;
+        grid-template-columns: 30% 26% 25% 12%;
+    }
+
+    .ticket-table {
+        display: grid;
+        grid-template-columns: 25% 15% 15% 15% 12%;
+    }
+
+    .booking-table {
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        gap: 30px;
+    }
+
+    .ticket-checker-table {
+        display: grid;
+        grid-template-columns: 15% 15% 15% 15% 15% 15%;
+    }
+    .rectangle {
+        position: relative;
+        display: inline-block;
+        width: 36px;
+        height: 16px;
+    }
+    .rectangle input {
+        display: none;
+    }
+    .toggle {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color:  #ededed;
+        transition: .4s;
+        border-radius: 16px;
+        z-index: 1;
+    }
+    .toggle:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 18px;
+        left: 0;
+        top: 0;
+        background-color: #228B22;
+        transition: .4s;
+        border-radius: 16px;
+    }
+    input:checked + .toggle{
+        /* background-color: #232946; */
+    }
+    input:checked + .toggle:before {
+        transform: translateX(19px);
+        background-color: #FF3509;
+    }
+}
