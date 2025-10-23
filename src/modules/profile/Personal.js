@@ -4,7 +4,7 @@ import React from 'react'
 export default function Personal({data,type}) {
     
     return (
-        <div className='w-full flex flex-wrap items-end justify-between bg-white p-5 rounded-lg'>
+        <div className='w-full h-fit flex flex-wrap items-end justify-between bg-white p-5 rounded-lg'>
             <div className='w-full flex items-center justify-between'>
                 <h4 className='text-black font-sans text-xl font-semibold'>Personal Details</h4>
             </div>
