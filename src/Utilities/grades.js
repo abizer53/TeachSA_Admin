@@ -1,77 +1,94 @@
 export default function Grades() {
-    let grades = [
-        {
-            id:1,
-            value:'Grade 1'
-        },
-        {
-            id:2,
-            value:'Grade 2'
-        },
-        {
-            id:3,
-            value:'Grade 3'
-        },
-        {
-            id:4,
-            value:'Grade 4'
-        },
-        {
-            id:5,
-            value:'Grade 5'
-        },
-        {
-            id:6,
-            value:'Grade 6'
-        },
-        {
-            id:7,
-            value:'Grade 7'
-        },
-        {
-            id:8,
-            value:'Grade 8'
-        },
-        {
-            id:9,
-            value:'Grade 9'
-        },
-        {
-            id:10,
-            value:'Grade 10'
-        },
-        {
-            id:11,
-            value:'Grade 11'
-        },
-        {
-            id:12,
-            value:'Grade 12'
-        },
-        {
-            id:13,
-            value:'First Year College'
-        },
-        {
-            id:14,
-            value:'Second Year College'
-        },
-        {
-            id:15,
-            value:'Third Year College'
-        },
-        {
-            id:16,
-            value:'Honours'
-        },
-        {
-            id:17,
-            value:'Masters'
-        },
-        {
-            id:18,
-            value:'PHD'
-        }
-    ]
-    return grades;
+  let grades = [
+    { id: 1, value: 'Higher Certificate in Early Childhood Care and Education (ECCE)' },
+    { id: 2, value: 'Diploma in Early Childhood Development (ECD)' },
+    { id: 3, value: 'Bachelor of Education (B.Ed) in Foundation Phase Teaching' },
+    { id: 4, value: 'Bachelor of Education (B.Ed) in Early Childhood Development' },
+    { id: 5, value: 'Postgraduate Certificate in Education (PGCE) — Foundation Phase' },
+    { id: 6, value: 'National Diploma in Educare' },
+    { id: 7, value: 'NQF Level 4 ECD Certificate' },
+    { id: 8, value: 'NQF Level 5 ECD Diploma' },
+    { id: 9, value: 'Montessori Teaching Diploma / Certificate' },
+    { id: 10, value: 'Grade R Teaching Diploma' },
+    { id: 11, value: 'Advanced Certificate in Grade R Teaching' },
+    { id: 12, value: 'Bachelor of Education (B.Ed) in Intermediate Phase Teaching' },
+    { id: 13, value: 'Bachelor of Education (B.Ed) in Senior Phase Teaching' },
+    { id: 14, value: 'Postgraduate Certificate in Education (PGCE) — Intermediate / Senior Phase' },
+    { id: 15, value: 'Bachelor of Education (B.Ed) — Further Education and Training (FET) Phase' },
+    { id: 16, value: 'Advanced Diploma in Education' },
+    { id: 17, value: 'Advanced Certificate in Education (ACE)' },
+    { id: 18, value: 'Bachelor of Arts (BA) in Education' },
+    { id: 19, value: 'Bachelor of Science (BSc) in Education' },
+    { id: 20, value: 'Bachelor of Commerce (BCom) in Education' },
+    { id: 21, value: 'Honours in Education' },
+    { id: 22, value: 'Postgraduate Diploma in Education (PGDipEd)' },
+    { id: 23, value: 'Master of Education (M.Ed)' },
+    { id: 24, value: 'Doctor of Philosophy (PhD) in Education' },
+    { id: 25, value: 'Diploma in Physical Education' },
+    { id: 26, value: 'Diploma in Creative Arts Education' },
+    { id: 27, value: 'Diploma in Music Education' },
+    { id: 28, value: 'Diploma in Life Skills Education' },
+    { id: 29, value: 'Bachelor of Education (B.Ed) in Languages' },
+    { id: 30, value: 'Bachelor of Education (B.Ed) in Mathematics Education' },
+    { id: 31, value: 'Bachelor of Education (B.Ed) in Natural Sciences and Technology' },
+    { id: 32, value: 'Bachelor of Education (B.Ed) in Social Sciences' },
+    { id: 33, value: 'Bachelor of Education (B.Ed) in Economic and Management Sciences (EMS)' },
+    { id: 34, value: 'Bachelor of Education (B.Ed) in Religious Education' },
+    { id: 35, value: 'Bachelor of Education (B.Ed) in Life Orientation' },
+    { id: 36, value: 'Bachelor of Education (B.Ed) in Information and Communication Technology (ICT)' },
+    { id: 37, value: 'Bachelor of Education (B.Ed) in Technology Education' },
+    { id: 38, value: 'Bachelor of Education (B.Ed) in Computer Applications Technology (CAT)' },
+    { id: 39, value: 'Bachelor of Education (B.Ed) in Coding and Robotics' },
+    { id: 40, value: 'Bachelor of Education (B.Ed) in Natural Sciences' },
+    { id: 41, value: 'Bachelor of Education (B.Ed) in Technical Education' },
+    { id: 42, value: 'Bachelor of Education (B.Ed) in Business Studies' },
+    { id: 43, value: 'Bachelor of Education (B.Ed) in Accounting' },
+    { id: 44, value: 'Bachelor of Education (B.Ed) in Economics' },
+    { id: 45, value: 'Bachelor of Education (B.Ed) in Consumer Studies' },
+    { id: 46, value: 'Bachelor of Education (B.Ed) in Hospitality Studies' },
+    { id: 47, value: 'Bachelor of Education (B.Ed) in Information Technology (IT)' },
+    { id: 48, value: 'Bachelor of Education (B.Ed) in Visual Arts' },
+    { id: 49, value: 'Bachelor of Education (B.Ed) in Design' },
+    { id: 50, value: 'Bachelor of Education (B.Ed) in Dramatic Arts' },
+    { id: 51, value: 'Bachelor of Education (B.Ed) in Music (Senior Phase)' },
+    { id: 52, value: 'Bachelor of Education (B.Ed) in Tourism' },
+    { id: 53, value: 'Bachelor of Education (B.Ed) in Agricultural Sciences' },
+    { id: 54, value: 'Bachelor of Education (B.Ed) in Engineering Graphics and Design (EGD)' },
+    { id: 55, value: 'Bachelor of Education (B.Ed) in Technical Mathematics' },
+    { id: 56, value: 'Bachelor of Education (B.Ed) in Technical Science' },
+    { id: 57, value: 'Bachelor of Education (B.Ed) in Civil Technology' },
+    { id: 58, value: 'Bachelor of Education (B.Ed) in Electrical Technology' },
+    { id: 59, value: 'Bachelor of Education (B.Ed) in Mechanical Technology' },
+    { id: 60, value: 'Diploma in Engineering Studies (N4–N6)' },
+    { id: 61, value: 'National N Diploma in Engineering Studies' },
+    { id: 62, value: 'Bachelor of Technology (BTech) in Engineering' },
+    { id: 63, value: 'Bachelor of Engineering (BEng)' },
+    { id: 64, value: 'Advanced Diploma in Technical and Vocational Education and Training (TVET)' },
+    { id: 65, value: 'Diploma in Business Management' },
+    { id: 66, value: 'Diploma in Administration' },
+    { id: 67, value: 'Diploma in Accounting and Finance' },
+    { id: 68, value: 'Diploma in Marketing and Entrepreneurship' },
+    { id: 69, value: 'Diploma in Human Resource Management' },
+    { id: 70, value: 'Diploma in Hospitality or Tourism Management' },
+    { id: 71, value: 'Diploma in Agricultural Studies' },
+    { id: 72, value: 'Diploma in Health Sciences or Nursing Education' },
+    { id: 73, value: 'Diploma in Law or Legal Studies' },
+    { id: 74, value: 'Diploma in Psychology or Social Work' },
+    { id: 75, value: 'Diploma in Art and Design or Architecture' },
+    { id: 76, value: 'Diploma in Communication, Media or Journalism' },
+    { id: 77, value: 'Diploma in Language Studies or Linguistics' },
+    { id: 78, value: 'Diploma in Research or Academic Support' },
+    { id: 79, value: 'Advanced Diploma in Educational Leadership and Management' },
+    { id: 80, value: 'Advanced Certificate in Inclusive Education' },
+    { id: 81, value: 'Postgraduate Diploma in Curriculum Studies' },
+    { id: 82, value: 'Postgraduate Diploma in Assessment Practices' },
+    { id: 83, value: 'Bachelor of Education Honours in Educational Management' },
+    { id: 84, value: 'Master’s in Education Leadership' },
+    { id: 85, value: 'Master’s in Education Policy' },
+    { id: 86, value: 'Master’s in Curriculum and Instruction' },
+    { id: 87, value: 'Doctorate in Education (EdD)' },
+    { id: 88, value: 'Professional Registration with South African Council for Educators (SACE)' },
+    { id: 89, value: 'Other' },
+  ];
+  return grades;
 }

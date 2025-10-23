@@ -22,6 +22,7 @@ import Loader from '@/modules/Loader';
 import FilterBar from '@/modules/FilterBarJob';
 import Pagination from '@/modules/Pagination';
 import Lock from '../../../public/icons/Lock';
+import LargePhotoModal from '@/modules/LargePhotoModal';
 dayjs.extend(relativeTime)
 export default function EventDetails({event}) {
     const router = useRouter()
@@ -79,16 +80,22 @@ export default function EventDetails({event}) {
         dataSetter()
         getUserListHandler("")
     },[])
+    const [openModal,setOpenModal] = useState(false)
+    const openModalHandler = () => setOpenModal(!openModal)
   
     return (
         <Layout>
             {deleteModal && <DeleteModal handler={deleteModalHandler} />}
+            {openModal && <LargePhotoModal source={data?.job_thumbnail} handler={openModalHandler} />}
             {!loading && data && <div className='w-full mt-2 bg-white rounded-2xl py-2 flex flex-wrap items-start justify-center'>
                 <div className='w-full flex flex-wrap mt-2 rounded-xl p-5'>
                     <div className='w-full flex justify-between'>
                         <div className='flex flex-wrap gap-4'>
-                            <div className='flex items-center justify-center size-16 shadow-searchbox rounded-md'>
+                            <div className='flex items-center justify-center size-16 shadow-searchbox rounded-md relative'>
                                 <img src={data?.job_thumbnail} alt="" className="size-20 rounded-md" />
+                                {data?.job_thumbnail&& <div onClick={openModalHandler} className='-top-4 -right-2 cursor-pointer shadow bg-white rounded-full p-2 absolute'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link-icon lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                                </div>}
                             </div>
                             <div>
                                 <h4 className='text-black font-semibold text-xl font-sans flex hover:text-green'>{data?.job_title}</h4>

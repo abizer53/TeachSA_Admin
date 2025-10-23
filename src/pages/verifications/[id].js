@@ -19,6 +19,7 @@ import BlockUnblockModal from '@/modules/BlockUnblockModal'
 import UploadedDocument from '@/modules/profile/UploadedDocument'
 import Loader from '@/modules/Loader'
 import UpperModule from '@/modules/profile/UpperModule'
+import LargePhotoModal from '@/modules/LargePhotoModal'
 
 export default function Profile() {
     const router = useRouter()
@@ -51,10 +52,17 @@ export default function Profile() {
     useEffect(()=>{
       dataSetter()
     },[])
+    const [openModal,setOpenModal] = useState(false)
+    const openModalHandler = () => setOpenModal(!openModal)
 
     return (
         <Layout>
-            {!loading && data && <img src={router.query.type == 'provider' ? data?.cover_photo ? data?.cover_photo : '/images/thumbnail.png' : data?.profile?.cover_photo ? data?.profile?.cover_photo : '/images/thumbnail.png'} className={`w-full h-60 object-cover z-10 rounded-lg`}></img>}
+            {!loading && data && <div className='w-full relative'>
+                <img src={router.query.type == 'provider' ? data?.cover_photo ? data?.cover_photo : '/images/thumbnail.png' : data?.profile?.cover_photo ? data?.profile?.cover_photo : '/images/thumbnail.png'} className={`w-full h-60 object-cover z-10 rounded-lg`}></img>
+                <p onClick={openModalHandler} className='text-xs z-20 font-normal cursor-pointer w-fit absolute bottom-2.5 right-3 bg-zinc-200 py-1 px-2 rounded-lg'>View Large</p>
+            </div>}
+            {openModal && <LargePhotoModal source={router.query.type == 'provider' ? data?.cover_photo ? data?.cover_photo : '/images/thumbnail.png' : data?.profile?.cover_photo ? data?.profile?.cover_photo : '/images/thumbnail.png'} handler={openModalHandler} />}
+        
             <section className='container'>
                 {!loading && data && <UpperModule verify={true} data={data} type={router.query.type} loading={loading} refresh={dataSetter} />}
                 {!loading && <div className="w-full">

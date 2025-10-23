@@ -16,6 +16,7 @@ import UploadedDocument from '@/modules/profile/UploadedDocument'
 import VerifyConfirmationModal from '@/modules/VerifyConfirmationModal'
 import Loader from '@/modules/Loader'
 import UpperModule from '@/modules/profile/UpperModule'
+import LargePhotoModal from '@/modules/LargePhotoModal'
 
 export default function Profile() {
     const router = useRouter()
@@ -46,10 +47,15 @@ export default function Profile() {
     useEffect(()=>{
         dataSetter()
     },[])
-  
+    const [openModal,setOpenModal] = useState(false)
+    const openModalHandler = () => setOpenModal(!openModal)
     return (
         <Layout>
-            {!loading && data && <img src={data?.profile?.cover_photo ? data?.profile?.cover_photo : '/images/thumbnail.png'} className={`w-full h-60 object-cover  z-10 rounded-lg`}></img>}
+            {!loading && data && <div className='w-full relative'>
+                <img src={data?.profile?.cover_photo ? data?.profile?.cover_photo : '/images/thumbnail.png'} className={`w-full h-60 object-cover  z-10 rounded-lg`}></img>
+                <p onClick={openModalHandler} className='text-xs z-20 font-normal cursor-pointer w-fit absolute bottom-2.5 right-3 bg-zinc-200 py-1 px-2 rounded-lg'>View Large</p>
+            </div>}
+            {openModal && <LargePhotoModal source={data?.profile?.cover_photo ? data?.profile?.cover_photo : '/images/thumbnail.png'} handler={openModalHandler} />}
             <section className='container'>
                 {!loading && data && <UpperModule data={data} type='seeker' loading={loading} refresh={dataSetter} />}
                 {!loading && <div className="w-full">
@@ -63,7 +69,12 @@ export default function Profile() {
                         <div className='flex items-center justify-between w-full'>
                             <h4 className='text-black font-sans text-xl font-semibold'>Documents Uploaded</h4>
                         </div>
-                        <div className="w-full grid grid-cols-3 gap-10 mt-5">
+                        {/* <div className="w-full grid grid-cols-3 gap-10 mt-5">
+                            {data?.resume && <UploadedDocument title={data?.resume?.title} url={data?.resume?.document}/>}
+                            {data?.document?.length > 0 && data?.document?.map((item,index)=><UploadedDocument key={index} title={item.title} url={item.document} />)}
+                            {data?.profile?.upload_reference_letters && <UploadedDocument title="Reference Letter" url={data?.profile?.upload_reference_letters}/>}
+                        </div> */}
+                        <div className="w-full grid sm:grid-cols-2 xl:grid-cols-3 gap-5 lg:gap-10 mt-5">
                             {data?.resume && <UploadedDocument title={data?.resume?.title} url={data?.resume?.document}/>}
                             {data?.document?.length > 0 && data?.document?.map((item,index)=><UploadedDocument key={index} title={item.title} url={item.document} />)}
                             {data?.profile?.upload_reference_letters && <UploadedDocument title="Reference Letter" url={data?.profile?.upload_reference_letters}/>}

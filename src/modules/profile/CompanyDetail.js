@@ -22,7 +22,7 @@ export default function CompanyDetail({data}) {
                 <div className='w-full flex items-center mt-4'>
                     <h5 className='text-grey font-medium text-sm w-2/6'>Final Job Category</h5>
                     <h5 className='text-grey font-medium text-sm w-1/6'>:</h5>
-                    <h5 className='text-black font-normal text-sm w-3/6'>{data?.job_category ? data?.job_category : "N/A by admin"}</h5>
+                    <h5 className='text-black font-normal text-sm w-3/6 break-words'>{data?.job_category ? data?.job_category : "N/A by admin"}</h5>
                 </div>
                 {/* <div className='w-full flex items-center mt-4'>
                     <h5 className='text-grey font-medium text-sm w-2/6'>ID Number</h5>
