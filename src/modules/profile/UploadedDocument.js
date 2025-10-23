@@ -17,8 +17,8 @@ export default function UploadedDocument({title,url}) {
         <File/>
         <h5 className='text-input-label font-medium text-sm'>{title}</h5>
       </div>
-      {type != 'pdf' && <img src={url} alt={title} className='w-full rounded-md object-cover mt-5 h-40 border' />}
-      {type == 'pdf' && <Link href={url} target="_blank" rel="noreferrer" className='w-full rounded-md border mt-5 h-40 gap-1 flex items-center justify-center'>
+      {type.toLowerCase() != 'pdf' && <img src={url} alt={title} className='w-full rounded-md object-cover mt-5 h-40 border' />}
+      {type.toLowerCase() == 'pdf' && <Link href={url} target="_blank" rel="noreferrer" className='w-full rounded-md border mt-5 h-40 gap-1 flex items-center justify-center'>
         <File/>
         <h5 className='text-input-label font-normal text-sm'>View {title}.{type}</h5>
       </Link>}

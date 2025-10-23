@@ -79,6 +79,7 @@ export default function Profile() {
                             {data?.document?.length > 0 && data?.document?.map((item,index)=><UploadedDocument key={index} title={item.title} url={item.document} />)}
                             {data?.profile?.upload_reference_letters && <UploadedDocument title="Reference Letter" url={data?.profile?.upload_reference_letters}/>}
                         </div>
+                        
                     </div>
                 </div>}
                 {loading && <div className="w-full p-5 mt-5">
