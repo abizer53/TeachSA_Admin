@@ -24,13 +24,13 @@ export default function Navbar() {
   } 
   return (
     <>
-      <div className="sticky top-0 left-0 w-full h-dvh bg-neutral1 flex flex-wrap flex-col justify-between bg-green shadow-sm">
+      <div className="sticky top-0 left-0 w-full h-dvh overflow-y-auto bg-neutral1 flex flex-wrap flex-col justify-between bg-green shadow-sm">
         <div className="">
           <div className="w-full px-5 h-24 items-center justify-center flex flex-wrap bg-white">
               <img className="size" src="/logo.png" alt="TechSA Logo" />
           </div>
-          <ul className="p-0 px-5 m-0 flex flex-wrap mt-8">
-            <li className={`group flex flex-wrap text-xxs w-full mt-1.5 py-3 px-5 hover:bg-yellow rounded-lg cursor-pointer ${router.asPath.startsWith("/dashboard") && 'bg-yellow'}`}>
+          <ul className="p-0 px-5 m-0 flex flex-wrap mt-4">
+            <li className={`group flex flex-wrap text-xxs w-full mt-0.5 py-3 px-5 hover:bg-yellow rounded-lg cursor-pointer ${router.asPath.startsWith("/dashboard") && 'bg-yellow'}`}>
               <Link href="/dashboard" className="w-full flex items-center gap-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path className={`group-hover:fill-black ${router.asPath.startsWith("/dashboard") && 'fill-black'}`} d="M9 18H4V10H9V18ZM15 18H10V6H15V18ZM21 18H16V2H21V18ZM22 22H3V20H22V22Z" fill="white"/>
@@ -38,7 +38,7 @@ export default function Navbar() {
                 <span className={`text-center text-lg group-hover:text-black  ${router.asPath.startsWith("/dashboard") ? 'text-black' :'text-white'}`}>Dashboard</span>
               </Link>
             </li>
-            <li className={`group flex flex-wrap text-xxs w-full mt-1.5 py-3 px-5 hover:bg-yellow rounded-lg cursor-pointer ${router.asPath.startsWith("/verifications") && 'bg-yellow'}`}>
+            <li className={`group flex flex-wrap text-xxs w-full mt-0.5 py-3 px-5 hover:bg-yellow rounded-lg cursor-pointer ${router.asPath.startsWith("/verifications") && 'bg-yellow'}`}>
               <Link href="/verifications" className="w-full flex items-center gap-4">
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -47,7 +47,7 @@ export default function Navbar() {
                 <span className={`text-center text-lg group-hover:text-black  ${router.asPath.startsWith("/verifications") ? 'text-black' :'text-white'}`}>Verifications</span>
               </Link>
             </li>
-          <li className={`group flex flex-wrap text-xxs w-full mt-1.5 py-3 px-5 hover:bg-yellow rounded-lg cursor-pointer ${router.asPath.startsWith("/jobs") && 'bg-yellow'} ${router.asPath == `/jobs/${router.query.job}` && 'bg-yellow'}`}>
+          <li className={`group flex flex-wrap text-xxs w-full mt-0.5 py-3 px-5 hover:bg-yellow rounded-lg cursor-pointer ${router.asPath.startsWith("/jobs") && 'bg-yellow'} ${router.asPath == `/jobs/${router.query.job}` && 'bg-yellow'}`}>
             <Link href="/jobs" className="w-full flex items-center gap-4">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path className={`group-hover:fill-black ${router.asPath.startsWith("/jobs") && 'fill-black'} ${router.asPath.startsWith("/job-seekers") == `/jobs/${router.query.job}` && 'fill-black'}`} d="M6.99979 7V3C6.99979 2.44772 7.4475 2 7.99979 2H20.9998C21.5521 2 21.9998 2.44772 21.9998 3V16C21.9998 16.5523 21.5521 17 20.9998 17H17V20.9925C17 21.5489 16.551 22 15.9925 22H3.00728C2.45086 22 2 21.5511 2 20.9925L2.00276 8.00748C2.00288 7.45107 2.4518 7 3.01025 7H6.99979ZM8.99979 7H15.9927C16.549 7 17 7.44892 17 8.00748V15H19.9998V4H8.99979V7ZM8.50242 18L14.1593 12.3431L12.7451 10.9289L8.50242 15.1716L6.3811 13.0503L4.96689 14.4645L8.50242 18Z" fill="white"/>
@@ -55,7 +55,7 @@ export default function Navbar() {
               <span className={`text-center text-lg group-hover:text-black ${router.asPath.startsWith("/jobs") && 'text-black'} ${router.asPath == `/jobs/${router.query.job}` && 'text-black'} ${!router.asPath.includes("/jobs") && 'text-white' }`}>Posted Jobs</span>
             </Link>
           </li>
-          <li className={`group flex flex-wrap text-xxs w-full mt-1.5 py-3 px-5 hover:bg-yellow rounded-lg cursor-pointer ${router.asPath.startsWith("/job-seekers") && 'bg-yellow'}`}>
+          <li className={`group flex flex-wrap text-xxs w-full mt-0.5 py-3 px-5 hover:bg-yellow rounded-lg cursor-pointer ${router.asPath.startsWith("/job-seekers") && 'bg-yellow'}`}>
             <Link href="/job-seekers" className="w-full flex items-center gap-4">
               
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -64,7 +64,7 @@ export default function Navbar() {
               <span className={`text-center text-lg group-hover:text-black  ${router.asPath.startsWith("/job-seekers") ? 'text-black' :'text-white'}`}>Job Seekers</span>
             </Link>
           </li>
-          <li className={`group flex flex-wrap text-xxs w-full mt-1.5 py-3 px-5 hover:bg-yellow rounded-lg cursor-pointer ${router.asPath.startsWith("/job-providers") && 'bg-yellow'}`}>
+          <li className={`group flex flex-wrap text-xxs w-full mt-0.5 py-3 px-5 hover:bg-yellow rounded-lg cursor-pointer ${router.asPath.startsWith("/job-providers") && 'bg-yellow'}`}>
             <Link href="/job-providers" className="w-full flex items-center gap-4">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path className={`group-hover:fill-black ${router.asPath.startsWith("/job-providers") && 'fill-black'}`} d="M14 14.252V22H4C4 17.5817 7.58172 14 12 14C12.6906 14 13.3608 14.0875 14 14.252ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM18 17V14H20V17H23V19H20V22H18V19H15V17H18Z" fill="white"/>
@@ -72,7 +72,7 @@ export default function Navbar() {
               <span className={`text-center text-lg group-hover:text-black  ${router.asPath.startsWith("/job-providers") ? 'text-black' :'text-white'}`}>Job Providers</span>
             </Link>
           </li>
-          <li className={`group flex flex-wrap text-xxs w-full mt-1.5 py-3 px-5 hover:bg-yellow rounded-lg cursor-pointer ${router.asPath.startsWith("/reports") && 'bg-yellow'}`}>
+          <li className={`group flex flex-wrap text-xxs w-full mt-0.5 py-3 px-5 hover:bg-yellow rounded-lg cursor-pointer ${router.asPath.startsWith("/reports") && 'bg-yellow'}`}>
               <Link href="/reports" className="w-full flex items-center gap-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path className={`group-hover:fill-black ${router.asPath.startsWith("/reports") && 'fill-black'}`} d="M3 3H11V11H3V3ZM3 13H11V21H3V13ZM13 3H21V11H13V3ZM13 13H21V21H13V13Z" fill="white"/>
@@ -80,7 +80,7 @@ export default function Navbar() {
                 <span className={`text-center text-lg group-hover:text-black  ${router.asPath.startsWith("/reports") ? 'text-black' :'text-white'}`}>Reports</span>
               </Link>
             </li>
-            <li className={`group flex flex-wrap text-xxs w-full mt-1.5 py-3 px-5 hover:bg-yellow rounded-lg cursor-pointer ${router.asPath.startsWith("/categories") && 'bg-yellow'}`}>
+            <li className={`group flex flex-wrap text-xxs w-full mt-0.5 py-3 px-5 hover:bg-yellow rounded-lg cursor-pointer ${router.asPath.startsWith("/categories") && 'bg-yellow'}`}>
               <Link href="/categories" className="w-full flex items-center gap-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path className={`group-hover:fill-black ${router.asPath.startsWith("/categories") && 'fill-black'}`} d="M3 3H11V11H3V3ZM3 13H11V21H3V13ZM13 3H21V11H13V3ZM13 13H21V21H13V13Z" fill="white"/>
@@ -88,13 +88,13 @@ export default function Navbar() {
                 <span className={`text-center text-lg group-hover:text-black  ${router.asPath.startsWith("/categories") ? 'text-black' :'text-white'}`}>Categories</span>
               </Link>
             </li>
-            <li className={`group flex flex-wrap text-xxs w-full mt-1.5 py-3 px-5 hover:bg-yellow rounded-lg cursor-pointer ${router.asPath.startsWith("/revenue") && 'bg-yellow'}`}>
+            <li className={`group flex flex-wrap text-xxs w-full mt-0.5 py-3 px-5 hover:bg-yellow rounded-lg cursor-pointer ${router.asPath.startsWith("/revenue") && 'bg-yellow'}`}>
               <Link href="/revenue" className="w-full flex items-center gap-4">
                 <img src={'/images/rand.svg'} alt="Currency" className='size-5 rounded-full' />
                 <span className={`text-center text-lg group-hover:text-black  ${router.asPath.startsWith("/revenue") ? 'text-black' :'text-white'}`}>Revenue</span>
               </Link>
             </li>
-            <li className="group flex flex-wrap text-xxs w-full mt-1.5 py-3 hover:bg-yellow px-5 rounded-lg cursor-pointer" onClick={() => setConfirmation(true)}>
+            <li className="group flex flex-wrap text-xxs w-full mt-0.5 py-3 hover:bg-yellow px-5 rounded-lg cursor-pointer" onClick={() => setConfirmation(true)}>
               <div className="w-full flex items-center gap-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path className={`group-hover:fill-black`} d="M10 3V5H5V19H19V14H21V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3H10ZM17.7071 7.70711L12 13.4142L10.5858 12L16.2929 6.29289L13 3H21V11L17.7071 7.70711Z" fill="white"/>

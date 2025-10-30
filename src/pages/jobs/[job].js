@@ -158,7 +158,9 @@ export default function EventDetails({event}) {
                     </div>
                     <div className='border rounded-md px-5 py-3 w-full mt-5'>
                         <p className='text-sm font-medium text-grey'>Job Description</p>
-                        <p className="text-black font-normal text-sm w-full mt-1">{data?.job_description}</p>
+                        <p className="text-black font-normal text-sm w-full mt-1">
+                            <div dangerouslySetInnerHTML={{ __html: data?.job_description }} />
+                        </p>
                     </div>
                 </div>
                 <div className='w-full flex flex-wrap mt-5 border-t'>
