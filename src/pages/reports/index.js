@@ -77,6 +77,7 @@ export default function Index({events}) {
           <h6 className='text-sm font-normal text-input-label w-1/6'>Report For</h6>
           <h6 className='text-sm font-normal text-input-label w-1/6'>Employer Name</h6>
           <h6 className='text-sm font-normal text-input-label w-1/6'>Seeker Name</h6>
+          <h6 className='text-sm font-normal text-input-label w-1/6'>Created Date</h6>
           <h6 className='text-sm font-normal text-input-label w-2/6'>Message</h6>
         </div>
         {loading && <Loader/>}

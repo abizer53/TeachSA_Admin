@@ -83,7 +83,7 @@ export default function Revenue() {
                     {transactionData?.seekerSub?.length == 0 && <h6 className='p-5 text-center text-black text-sm font-normal'>No transactions found!</h6>}
                     {transactionData?.seekerSub?.map((item,index)=><div key={index} className='w-full bg-white hover:bg-zinc-100 border border-b-0 flex items-center justify-between px-5 py-3'>
                         <Link href={`/job-seekers/${item?.user_id}`} className='text-sm font-normal text-black w-1/3'>{item?.user?.full_name}</Link>
-                        <h6 className='text-sm font-normal text-black w-1/3 text-center'>{dayjs(item?.createdAt).format("DD MMM YYYY")}</h6>
+                        <h6 className='text-sm font-normal text-black w-1/3 text-center'>{dayjs(item?.created_at).format("DD MMM YYYY")}</h6>
                         <h6 className='text-sm font-normal text-black w-1/3 justify-center flex items-center gap-1'><img src="/images/rand.svg" className='size-7' alt="R" />{item?.price}</h6>
                     </div>)}
                 </div>
@@ -97,7 +97,7 @@ export default function Revenue() {
                     {transactionData?.empSub?.length == 0 && <h6 className='p-5 text-center text-black text-sm font-normal'>No transactions found!</h6>}
                     {transactionData?.empSub?.map((item,index)=><div key={index} className='w-full bg-white hover:bg-zinc-100 border border-b-0 flex items-center justify-between px-5 py-3'>
                         <Link href={`/job-providers/${item?.emp_id}`} className='text-sm font-normal text-black w-1/3'>{item?.emp?.full_name}</Link>
-                        <h6 className='text-sm font-normal text-black w-1/3 text-center'>{dayjs(item?.createdAt).format("DD MMM YYYY")}</h6>
+                        <h6 className='text-sm font-normal text-black w-1/3 text-center'>{dayjs(item?.created_at).format("DD MMM YYYY")}</h6>
                         <h6 className='text-sm font-normal text-black w-1/3 justify-center flex items-center gap-1'><img src="/images/rand.svg" className='size-7' alt="R" />{item?.price}</h6>
                     </div>)}
                 </div>
