@@ -28,12 +28,12 @@ export default function UpperModule({data,type,refresh,loading,verify}) {
     const openModalHandler = () => setOpenModal(!openModal)
     return (
         <div className="w-full">
-            {openModal && <LargeProfilePicModal source={(data?.profile?.profile_photo || data?.upload_logo) || '/images/thumbnail.png'} handler={openModalHandler} />}
+            {openModal && <LargeProfilePicModal source={(type == 'seeker' ? data?.profile?.profile_photo || '/images/pbanner.webp' : data?.upload_logo || '/images/banner.webp')} handler={openModalHandler} />}
             <div className='w-full flex items-end justify-between -mt-8 z-10 relative'>
                 <div className='flex items-center gap-6 px-5 w-1/2'>
                     <div className='relative z-10'>
-                        {type == 'seeker' && <img onClick={openModalHandler} src={(data && data?.profile?.profile_photo)?data?.profile?.profile_photo:"/images/thumbnail.png"} className='size-28 rounded-full object-fill shadow border-4 border-white z-10' />}
-                        {type == 'provider' && <img onClick={openModalHandler} src={(data && data?.upload_logo)?data?.upload_logo:"/images/thumbnail.png"} className='h-28 w-28 rounded-full object-cover shadow border-4 border-white z-10' />}
+                        {type == 'seeker' && <img onClick={openModalHandler} src={(data && data?.profile?.profile_photo)?data?.profile?.profile_photo:"/images/pbanner.webp"} className='size-28 rounded-full object-fill shadow border-4 border-white z-10' />}
+                        {type == 'provider' && <img onClick={openModalHandler} src={(data && data?.upload_logo)?data?.upload_logo:"/images/banner.webp"} className='h-28 w-28 rounded-full object-cover shadow border-4 border-white z-10' />}
                         <div onClick={openModalHandler} className='bottom-0 -right-2 cursor-pointer shadow bg-white rounded-full p-2 absolute'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link-icon lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
                         </div>

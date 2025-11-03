@@ -51,7 +51,7 @@ export default function Profile() {
     return (
         <Layout>
             {!loading && data && <div className='w-full relative'>
-                <img src={data?.cover_photo ? data?.cover_photo : '/images/thumbnail.png'} className={`w-full h-60 object-cover  z-10 rounded-lg`}></img>
+                <img src={data?.cover_photo ? data?.cover_photo : '/images/banner.webp'} className={`w-full h-60 object-cover  z-10 rounded-lg`}></img>
                 <p onClick={openModalHandler} className='text-xs z-20 font-normal cursor-pointer w-fit absolute bottom-2.5 right-3 bg-zinc-200 py-1 px-2 rounded-lg'>View Large</p>
             </div>}
             {openModal && <LargePhotoModal source={data?.cover_photo ? data?.cover_photo : '/images/thumbnail.png'} handler={openModalHandler} />}
