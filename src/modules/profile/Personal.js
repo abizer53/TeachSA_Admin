@@ -9,7 +9,7 @@ export default function Personal({data,type}) {
                 <h4 className='text-black font-sans text-xl font-semibold'>Personal Details</h4>
             </div>
             <div className='w-full flex items-center mt-6'>
-                <h5 className='text-grey font-medium text-sm w-2/6'>Name</h5>
+                <h5 className='text-grey font-medium text-sm w-2/6'>Full Name</h5>
                 <h5 className='text-grey font-medium text-sm w-1/6'>:</h5>
                 <h5 className='text-black font-normal text-sm w-3/6'>{data.full_name ? data.full_name : 'N/A'}</h5>
             </div>
