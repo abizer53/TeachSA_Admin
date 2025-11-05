@@ -70,7 +70,7 @@ export default function Profile() {
                             <h4 className='text-black font-sans text-2xl font-semibold'>Documents Uploaded</h4>
                         </div>
                         <div className='w-full grid grid-cols-3 gap-8 mt-5'>
-                            {data?.upload_company_registration && <UploadedDocument title="Company Registration" url={data?.upload_company_registration}/>}
+                            {data?.upload_company_registration && <UploadedDocument title="Authorized User ID" url={data?.upload_company_registration}/>}
                         </div>
                     </div>
                 </div>}
