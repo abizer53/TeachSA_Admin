@@ -1,5 +1,28 @@
 export default function Grades() {
   let grades = [
+    // ✅ Newly added items
+    { id: 90, value: 'None' },
+    { id: 91, value: 'Infants' },
+    { id: 92, value: '1.5 to 2 years' },
+    { id: 93, value: '2 to 3 years' },
+    { id: 94, value: '3 to 4 years' },
+    { id: 95, value: '5 to 6 years' },
+    { id: 96, value: 'Grade 0/ R' },
+    { id: 97, value: 'Grade 1' },
+    { id: 98, value: 'Grade 2' },
+    { id: 99, value: 'Grade 3' },
+    { id: 100, value: 'Grade 4' },
+    { id: 101, value: 'Grade 5' },
+    { id: 102, value: 'Grade 6' },
+    { id: 103, value: 'Grade 7' },
+    { id: 104, value: 'Grade 8' },
+    { id: 105, value: 'Grade 9' },
+    { id: 106, value: 'Grade 10' },
+    { id: 107, value: 'Grade 11' },
+    { id: 108, value: 'Grade 12' },
+    { id: 109, value: 'Tertiary Undergraduate' },
+    { id: 110, value: 'Tertiary Postgraduate' },
+  
     { id: 1, value: 'Higher Certificate in Early Childhood Care and Education (ECCE)' },
     { id: 2, value: 'Diploma in Early Childhood Development (ECD)' },
     { id: 3, value: 'Bachelor of Education (B.Ed) in Foundation Phase Teaching' },
@@ -89,6 +112,8 @@ export default function Grades() {
     { id: 87, value: 'Doctorate in Education (EdD)' },
     { id: 88, value: 'Professional Registration with South African Council for Educators (SACE)' },
     { id: 89, value: 'Other' },
+
   ];
+
   return grades;
 }
