@@ -77,7 +77,7 @@ export default function Profile() {
                         <div className="w-full grid sm:grid-cols-2 xl:grid-cols-3 gap-5 lg:gap-10 mt-5">
                             {data?.resume && <UploadedDocument title={data?.resume?.title} url={data?.resume?.document}/>}
                             {data?.document?.length > 0 && data?.document?.map((item,index)=><UploadedDocument key={index} title={item.title} url={item.document} />)}
-                            {data?.profile?.upload_reference_letters && <UploadedDocument title="Reference Letter" url={data?.profile?.upload_reference_letters}/>}
+                            {data?.profile?.upload_reference_letters && <UploadedDocument title="ID Number" url={data?.profile?.upload_reference_letters}/>}
                         </div>
                     </div>
                 </div>}
