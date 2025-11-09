@@ -12,7 +12,7 @@ import React, { useEffect, useState } from 'react'
 import Copy from '../../public/icons/Copy'
 import { infoMessage } from '@/Utilities/toasters'
 
-export default function VerifyConfirmationModal({type,data,handler,refresh}) {
+export default function VerifyConfirmationModal({type,data,handler,refresh, isVerified}) {
     const [loading,setLoading] = useState(false)
     const [dataNew,setData] = useState([])
     const [verified,setVerified] = useState('')
@@ -42,10 +42,15 @@ export default function VerifyConfirmationModal({type,data,handler,refresh}) {
         }
     }
     const yesHandler = async () => {
+        if(!isVerified){
+            infoMessage("SA ID is not yet verified. Please verify it first.")
+            return
+        }
         if(type == 'seeker'){
             if(isRequiredStringArray(preferredPositions.preferred_positions,"Final position") && isRequired(verified,"Sace ID verification status")){
                 setLoading(true)
                 const formdata = new FormData();
+                formdata.append("is_sa_id_verified",1)
                 formdata.append("status", "1");
                 formdata.append("decline_message",null)
                 formdata.append("sace_id_verification", verified == 'Yes' ? 1 : 0);
@@ -62,6 +67,7 @@ export default function VerifyConfirmationModal({type,data,handler,refresh}) {
             if(isRequiredStringArray(preferredPositions.preferred_categories,"Final categories")){
                 setLoading(true)
                 const formdata = new FormData();
+                formdata.append("is_sa_id_verified",1)
                 formdata.append("job_category", preferredPositions.preferred_categories);
                 formdata.append("status", "1");
                 formdata.append("decline_message",null)
