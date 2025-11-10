@@ -171,13 +171,19 @@ export default function UpperModule({ data, type, refresh, loading, setLoading }
                 <Button variant="green" onClick={verifyModalHandler} className="capitalize max-w-40">
                   Verify
                 </Button>
-                <Button
+                {(type == 'seeker' ? data?.profile?.is_sa_id_verified != 1 : data?.is_sa_id_verified != 1) && <Button
                   variant="yellow"
                   onClick={statusModalHandler}
                   className="capitalize w-96"
                 >
                   Check SA ID Status
-                </Button>
+                </Button>}
+                {(type == 'seeker' ? data?.profile?.is_sa_id_verified == 1 : data?.is_sa_id_verified == 1) && <Button
+                  variant="normal"
+                  className="capitalize w-80 bg-purple-400 text-white"
+                >
+                  SA ID Verified
+                </Button>}
                 <Button
                   variant="danger"
                   onClick={rejectionModalHandler}
